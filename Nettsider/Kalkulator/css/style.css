@@ -1,0 +1,24 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#money {
+    	background-color:#999999;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding: 3% 5%; 
+	filter: alpha(opacity=70);
+	-moz-opacity:.70;
+	width: 30%;
+}
+
+#answer {
+    background-color:white;
+    filter: alpha(opacity=70);
+    width: 170px;
+    height: 25px;
+}
