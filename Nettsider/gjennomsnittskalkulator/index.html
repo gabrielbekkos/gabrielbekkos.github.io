@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Karakterbok - Objekter og klasser</title>
+
+    
+    <link href="CSS/style.css" rel="stylesheet">
+
+</head>
+
+<body background="">
+    <h1>Gjennomsnittskarakter</h1>
+    
+        <p>Fagnavn: <input type="text" id="fagnavn"> </p>
+        <p>Karakter: <input type="number" id="karakter"></p>
+        <p><input type="submit" value="Legg inn" id="sendInn"> <input type="button" value="Skriv ut alle" id="skrivUt"></p>
+   
+    
+    <p id="svar"></p>
+    <br>
+    <p id="svar2"></p>
+    
+    <script>
+    
+//        var gjennomsnitt = 0;
+//        
+//        class Fag{
+//            constructor(fagnavn, karakter){
+//                this.fagnavn = fagnavn;
+//                this.karakter = karakter;
+//            }
+//        
+//            presenterKar(){
+//                document.write("I faget " + this.fagnavn + " har du karakter " + this.karakter);
+//            
+//            }
+//        }
+//        
+//        let engelsk = new Fag("Engelsk",5);
+//        engelsk.presenterKar();
+//        
+//    
+//    
+//        
+//        var result = document.getElementById("svar");
+
+       
+    var personer = [];
+    var fag, kar;
+    var karakterSum = 0
+    var snitt
+    
+    class person{
+        constructor(fag, kar){
+            this.fag = fag;
+            this.kar = kar;
+        }
+                
+    }
+    
+    function leggInn(){
+        fag = document.getElementById("fagnavn");
+        kar = document.getElementById("karakter");
+        
+        console.log(fag.value);
+        console.log(kar.value);
+        
+        personer.push(new person(fag.value, kar.value));
+        
+        fag.value = "";
+        kar.value= "";
+    }
+    
+    function skrivUt(){
+        for(i = 0; i < personer.length; i++){
+            document.getElementById("svar").innerHTML += personer[i].fag + " " + personer[i].kar + "<br>";
+            
+        }
+        for(i = 0; i < personer.length; i++){
+        karakterSum += parseInt(personer[i].kar);
+            console.log(karakterSum);
+        }
+        snitt = karakterSum / personer.length; 
+        
+        document.getElementById("svar2").innerHTML = snitt;
+    }
+    
+    document.getElementById("sendInn").addEventListener("click", leggInn);
+    document.getElementById("skrivUt").addEventListener("click", skrivUt);
+        
+    
+   
+        
+  
+    
+
+    </script>
+</body>
+
+</html>
